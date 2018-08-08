@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style type="text/css" media="all">
+        *{
+            width: 1280;
+            height: 720;
+        }
+        .rounded-window{
+            border-radius: 20px;
+        }
+        body {
+            background-color: lightgrey;
+        }
+        .jumbotron {
+            border: 1px solid black;
+            background-color: white;
+        }
+
+        .container {
+            padding-top: 80px;
+            background-color: lightgrey;
+        }
+        .shoe-preview{
+            max-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="rounded-window">
+        <nav class="navbar fixed-top navbar-dark bg-dark" style="-webkit-app-region:drag">
+            <a class="navbar-brand" href="#">Adidas Sneaker Bot</a>
+            <div class="justify-content-end nav-item">
+                <!-- <button type="button" class="btn btn-outline-warning" onclick="openDevTools()" style="-webkit-app-region: no-drag;">Dev</button> -->
+                <button type="button" class="btn btn-danger" onclick="closeElectron()" style="-webkit-app-region: no-drag;">Close</button>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <form class="cart-input jumbotron">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">URL</span>
+                            </div>
+                            <input type="text" id="url" class="form-control" placeholder="http://www.adidas.com/us/" aria-label="URL" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Size</span>
+                            </div>
+                            <input type="number" id="size" class="form-control" placeholder="10" aria-label="size" aria-describedby="basic-addon1">
+                        </div>
+                        <button type="button" class="btn btn-outline-dark" onclick="addToCart()">Add to Cart</button>
+                        <hr>
+                        <button type="button" class="btn btn-outline-info float-right" onclick="openCart()">Open Cart</button>
+                    </form>
+                </div>
+
+                <div class="col-4 shoe-preview">
+                    <div class="jumbotron">
+                        <h4>Shoe Preview</h4>
+                        <br>
+                        <img src="" class="shoe-image img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
